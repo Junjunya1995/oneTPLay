@@ -133,11 +133,11 @@ class Install {
             $db = Db::connect($dbconfig);
             //创建数据表
             create_tables($db, $dbconfig['prefix']);
-            //注册创始人帐号
-            $auth = build_auth_key();
             //创建配置文件
+            $auth = build_auth_key();
             $conf = write_config($dbconfig, $auth);
             $this->app->session->set('config_file', $conf, 'install');
+            //注册创始人帐号
             $admin = $this->app->session->get('admin_info', 'install');
             register_administrator($db, $dbconfig['prefix'], $admin, $auth);
             $status = $this->app->session->get('error', 'install');

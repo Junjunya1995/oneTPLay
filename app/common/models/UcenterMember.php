@@ -4,7 +4,7 @@ namespace app\common\models;
 
 use think\Model;
 use think\facade\{
-    Log, Request,App
+    Log, Request,App,Config
 };
 
 /**
@@ -56,9 +56,6 @@ class UcenterMember extends Model
             return -1; //用户不存在或被禁用
         }
         /* 验证用户密码 */
-        Log::record($user->password,'数据库');
-        Log::record($password,'未加密');
-        Log::record(ucenter_md5($password),'加密');
         if (ucenter_md5($password) !== $user->password) {
             return -2; //密码错误
         }

@@ -147,8 +147,9 @@ function msubstr($str, $start = 0, $length, $charset = "utf-8", $suffix = true) 
  * @param $array
  * @return bool
  */
-function in_array_case($value, $array=[]) {
-    return in_array(strtolower($value), array_map('strtolower', $array ??[]));
+function in_array_case($value, $array = [])
+{
+    return in_array(strtolower($value), array_map('strtolower', $array ?? []));
 }
 
 /**
@@ -157,8 +158,8 @@ function in_array_case($value, $array=[]) {
  * @param string $key 默认密钥
  * @return string
  */
-function ucenter_md5($str, $key = null) {
-    $key=empty($key) ? Config::get('key.uc_auth_key'):'static7';
-    Log::record($key,'key');
-    return '' === (string)$str ? '' : md5(sha1($str) . $key);
+function ucenter_md5($str, $key = '')
+{
+    $key = empty($key) ? Config::get('key.uc_auth_key') : $key;
+    return (string)$str === '' ? '' : md5(sha1($str) . $key);
 }
