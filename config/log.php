@@ -25,7 +25,7 @@ return [
     //主机IP或者域名
     'host'                => Env::get('log.host','slog.thinkphp.cn'),
     //日志强制记录到配置的client_id
-    'force_client_ids'    => ['slog_b46465','slog_cb8888'],
+    'force_client_ids'    => ['',''],
     //限制允许读取日志的client_id
-    'allow_client_ids'    => ['slog_b46465','slog_cb8888'],
+    'allow_client_ids'    => ['',''],
 ];
