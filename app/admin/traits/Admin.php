@@ -140,7 +140,7 @@ trait Admin
                     $second_urls = Db::name("menu")->where('pid',$item['id'])->field('id,url')->select() ?: []; //获取二级分类的合法url
                     $to_check_urls = $this->toCheckUrl($second_urls); // 检测菜单权限
                     foreach ($groups as $g) {// 按照分组生成子菜单树
-                        $where=[['pid','=',$item['id']],['group','=',$g]];
+                        $where=[['pid','=',$item['id']],['group','=',$g],['status','<>', -1]];
                         if (isset($to_check_urls) && !empty($to_check_urls)) {
                             $where[] = ['url','in', $to_check_urls];
                         }
