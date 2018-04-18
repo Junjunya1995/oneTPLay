@@ -1,45 +1,24 @@
-# static7_preview
-static7基础管理系统 预览版本  
+# oneTPLay  --dev
+oneTPLay forked  from [static7/static7_preview](https://github.com/static7/static7_preview)
 
-# 由于tp5.1还处于RC版本 系统功能可能处于不稳定状态,仅提供学习交流.
+### 由于老项目作者宣布废弃， 所以forked了一个分支，做了些修改适合自己平常中使用。并改名叫oneTPLay
+
+#### oneTPLay 是由于项目仿,onethink 并且是基于5.1开发的，然后使用了 layui 做页面。
+
+做了部分修改可以兼容php7.0,并且修复了某些bug
+
+#注意
+
+项目还未全部修改完毕，依然还有大量bug 无法运行
 
 
 
 运行环境 
 ===============
 
->  static7_preview预览版的运行环境要求 PHP7.1.0  以上。
+>  oneTPLay预览版的运行环境要求 PHP7.0  以上。
 
-> 建议通过虚拟域名访问
 
-> mysql 建议关闭严格模式
- 
-window系统 WampServer Version 3.0.6 64bit 配置示例
-
-配置如下通过虚拟域名访问
-
-配置apache下的httpd-vhosts.conf文件 路径X:\wamp64\bin\apache\apache2.4.23\conf\extra
-
-增加以下代码
-~~~
-<VirtualHost *:80>
-    DocumentRoot "X:/xxx/tp5/public/"
-    ServerName www.tp5.com
-    ErrorLog "logs/dummy-host.example.com-error.log"
-    CustomLog "logs/dummy-host.example.com-access.log" common
-    <Directory "X:/xxx/tp5/public/">
-    Options +Indexes +FollowSymLinks +MultiViews
-    AllowOverride all
-    Require all granted
-</Directory>
-</VirtualHost>
-~~~
-然后重启wamp
-
-再打开自己本地的C:\Windows\System32\drivers\etchosts文件,配置如下：
-~~~
-127.0.0.1 www.tp5.com
-~~~
 
 关闭mysql 的严格模式
 
