@@ -10,5 +10,6 @@ return [
         '__JS__'=> Request::root().'/'.Request::module().'/js',
         '__CSS__'=> Request::root().'/'.Request::module().'/css',
         '__IMG__'=> Request::root().'/'.Request::module().'/images',
+        '__STATIC__' => Request::rootUrl().'/static',
     ],
 ];

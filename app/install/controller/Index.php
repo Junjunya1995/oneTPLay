@@ -34,6 +34,7 @@ class Index {
             $this->app->config->pull('template'),//模板引擎
             $this->app->config->get('config.view_replace') //替换参数
         );
+        $this->view->config('tpl_replace_string', $this->app->config->get('config.view_replace'));
     }
 
     /**

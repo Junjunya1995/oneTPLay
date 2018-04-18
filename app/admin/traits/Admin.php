@@ -49,7 +49,7 @@ trait Admin
      * @param bool   $menus 菜单
      * @return mixed
      */
-    protected function setView(?array $value = [], ?string $template = '',$menus=true)
+    protected function setView(array $value = [], string $template = '',$menus=true)
     {
         //模板初始化
         $this->view = $this->view ?: Facade::make('view')->init(

@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.0.0",
         "phpmailer/phpmailer": "~5.2",
         "phpoffice/phpexcel": "1.8.1",
         "curl/curl": "^1.5",

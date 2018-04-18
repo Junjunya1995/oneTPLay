@@ -33,7 +33,7 @@ trait Home
      * @param string $template 模板名称
      * @return mixed
      */
-    protected function setView(?array $value = [], ?string $template = '')
+    protected function setView(array $value = [], string $template = '')
     {
         //模板初始化
         $this->view = $this->view ?: Facade::make('view')->init(
