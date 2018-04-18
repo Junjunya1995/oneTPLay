@@ -56,7 +56,7 @@ function list_to_tree($list, $pk = 'id', $pid = 'pid', $child = '_child', $root 
  * @author staitc7 <static7@qq.com>
  * @return string       用户昵称
  */
-function get_nickname(?int $uid = 0) {
+function get_nickname(int $uid = 0) {
     if ((int)$uid<1){
         return Session::get('user_auth.username');
     }

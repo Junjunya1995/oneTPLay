@@ -11,4 +11,5 @@ return [
         '__IMG__'=> Request::root().'/'.Request::module().'/images',
     ],
     //语言列表
-    'lang_list'=>['zh-cn','zh-tw','ja-jp','en-us'],];
+    'lang_list'=>['zh-cn','zh-tw','ja-jp','en-us'],
+];

@@ -9,7 +9,7 @@ oneTPLay forked  from [static7/static7_preview](https://github.com/static7/stati
 
 #注意
 
-项目还未全部修改完毕，依然还有大量bug 无法运行
+项目还未全部修改完毕，依然还有部分bug 
 
 
 

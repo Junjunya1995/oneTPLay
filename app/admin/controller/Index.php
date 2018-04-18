@@ -30,7 +30,7 @@ class Index
      * @param string $path 缓存路径
      * @return bool
      */
-    function clearRuntime(?string $path = null)
+    function clearRuntime(string $path = null)
     {
         $path  = $path ?: $this->app->getRuntimePath();
         $files = scandir($path);

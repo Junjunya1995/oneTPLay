@@ -21,7 +21,7 @@ use think\facade\{
 function check_env() {
     $items = [
         'os' => ['操作系统', '不限制', '类Unix', PHP_OS, 'success'],
-        'php' => ['PHP版本', '7.1.2', '5.3+', PHP_VERSION, 'success'],
+        'php' => ['PHP版本', '7.0.1', '5.3+', PHP_VERSION, 'success'],
         'upload' => ['附件上传', '不限制', '2M+', '未知', 'success'],
         'gd' => ['GD库', '2.0', '2.0+', '未知', 'success'],
         'disk' => ['磁盘空间', '10M', '不限制', '未知', 'success'],

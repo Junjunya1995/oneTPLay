@@ -25,7 +25,7 @@ trait Models
      * @param int    $limit 限制条数
      * @return mixed
      */
-    public function lists(?array $map = [], ?string $field = '*', ?string $order = '', int $limit = 0)
+    public function lists(array $map = [], string $field = '*', string $order = '', int $limit = 0)
     {
         return $this::all(function ($query) use ($map, $field, $order, $limit) {
             $query->where($map ?: null)
@@ -47,7 +47,7 @@ trait Models
      * @param array $query 额外参数
      * @return mixed
      */
-    public function listsPage(?array $map = [], ?string $field = '*', ?string $order = '', int $page = 1,int $limit = 0, array $query = [])
+    public function listsPage(array $map = [], string $field = '*', string $order = '', int $page = 1,int $limit = 0, array $query = [])
     {
         $object = $this::where($map ?: null)
             ->field($field ?: '*')
@@ -71,7 +71,7 @@ trait Models
      * @param array $query 额外参数
      * @return mixed
      */
-    public function listsJson(?array $map = [], ?string $field = '*', ?string $order = '', int $page = 1,int $limit = 0, array $query = [])
+    public function listsJson(array $map = [], string $field = '*', string $order = '', int $page = 1,int $limit = 0, array $query = [])
     {
         $object = $this::where($map ?: null)
             ->field($field ?: '*')
@@ -92,7 +92,7 @@ trait Models
      * @param null|string $field
      * @return mixed
      */
-    public function edit(int $id=0,?string $field = '*',?array $tmp_map =[])
+    public function edit(int $id=0,string $field = '*',array $tmp_map =[])
     {
         if ((int)$id<1){
             $this->error='参数错误';
@@ -116,7 +116,7 @@ trait Models
      * @return bool
      */
 
-    public function renew(?array $data=null,bool $rule=false,?string $pkId='',$validate_name='') {
+    public function renew(array $data=null,bool $rule=false,string $pkId='',$validate_name='') {
         if(empty($validate_name)){//获取验证器
             $class_name=get_class();
             $start=strrpos($class_name,'\\')+1;

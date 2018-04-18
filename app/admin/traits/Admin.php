@@ -52,10 +52,8 @@ trait Admin
     protected function setView(array $value = [], string $template = '',$menus=true)
     {
         //模板初始化
-        $this->view = $this->view ?: Facade::make('view')->init(
-            $this->app->config->pull('template'),//模板引擎
-            $this->app->config->get('config.view_replace') //替换参数
-        );
+        $this->view = $this->view ?: Facade::make('view')->init($this->app->config->pull('template'));
+        $this->view->config('tpl_replace_string', $this->app->config->get('config.view_replace'));
         //开启系统菜单
         $menus && $this->view->assign('systemMenus', $this->getMenus());
         return $this->view->fetch($template ?: '', $value ?: []);
@@ -83,7 +81,7 @@ trait Admin
      * @param null|string $msg 状态信息
      * @return mixed
      */
-    protected function layuiJson(?array $data = [], int $code = 0, ?string $msg = '')
+    protected function layuiJson(array $data = [], int $code = 0, string $msg = '')
     {
         if (empty($data) || !isset($data['total']) || empty($data['data'])) {
             $data = ['code' => 1, 'msg' => '暂时没有数据', 'count' => 0, 'data' => ''];

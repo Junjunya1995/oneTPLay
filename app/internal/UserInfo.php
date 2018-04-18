@@ -110,7 +110,7 @@ class UserInfo
      * @author staitc7 <static7@qq.com>
      * @return string       用户昵称
      */
-    public function nickname(?int $uid = null) {
+    public function nickname(int $uid = null) {
         if (empty($uid)){
             return Session::get('user_auth.username');
         }

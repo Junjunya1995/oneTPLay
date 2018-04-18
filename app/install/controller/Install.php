@@ -26,10 +26,8 @@ class Install {
         $this->app = Container::getInstance()->make('think\App');
         $this->checkDatabase();
         //模板初始化
-        $this->view = $this->view ?: Facade::make('view')->init(
-            $this->app->config->pull('template'),//模板引擎
-            $this->app->config->get('config.view_replace') //替换参数
-        );
+        $this->view = $this->view ?: Facade::make('view')->init($this->app->config->pull('template'));
+        $this->view->config('tpl_replace_string', $this->app->config->get('config.view_replace'));
     }
 
     /**

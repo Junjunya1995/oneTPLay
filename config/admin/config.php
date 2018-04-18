@@ -6,9 +6,10 @@ use \think\facade\{
 return [
     //内容进行字符替换
     'view_replace'=>[
-        '__JS__'=> Request::root().'/'.Request::module().'/js',
-        '__CSS__'=> Request::root().'/'.Request::module().'/css',
-        '__IMG__'=> Request::root().'/'.Request::module().'/images',
+        '__JS__'=> Request::rootUrl().'/'.Request::module().'/js',
+        '__CSS__'=> Request::rootUrl().'/'.Request::module().'/css',
+        '__IMG__'=> Request::rootUrl().'/'.Request::module().'/images',
+        '__STATIC__' => Request::rootUrl().'/static',
     ],
     //极验证暂时撤销
 //    'geetest'=>[

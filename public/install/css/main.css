@@ -28,3 +28,16 @@
     color: #666;
     font-weight: 300;
 }
+.ico-success {
+    color: #30a22c;
+}
+.ico-success::after {
+    content: '';
+}
+.ico-error{
+    color: #FF0000;
+}
+
+.ico-error::after{
+    content: 'ဇ';
+}
