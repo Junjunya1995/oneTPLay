@@ -70,7 +70,7 @@ function portrait($user_id = null) {
         return $info;
     }
     $portrait_id = Db::name('Member')->where('uid', $id)->value('portrait');
-    $path = (int)$portrait_id > 0 ? get_cover($portrait_id) :Request::root().'/'.Request::module().'/images/null.gif';
+    $path = (int)$portrait_id > 0 ? get_cover($portrait_id) :Request::rootUrl().'/'.Request::module().'/images/null.gif';
     Cookie::set("user_{$id}", $path, ['prefix' => 'portrait_', 'expire' => 86400]);
     return $path;
 

@@ -8,7 +8,7 @@
 namespace app\internal;
 
 use think\facade\{
-    App, Hook, Session,Cache,Config
+    App, Hook, Session,Config
 };
 
 
@@ -33,7 +33,7 @@ class UserInfo
             'last_login_time' => $data['last_login_time']
         ];
         //缓存用户信息
-        Cache::set('user_info', $data);
+        Session::set('user_info', $data);
         Session::set('user_auth', $auth);
         Session::set('user_auth_sign', data_auth_sign((array)$auth));
         //记录行为
@@ -58,12 +58,12 @@ class UserInfo
         if (empty($user_id)){
             return false;
         }
-        $data=Cache::get('user_info');
+        $data=Session::get('user_info');
         if ($data) {
             return $data;
         }
         $data = App::model('Member')->oneUser(['uid', $this->userId()]);
-        $data && Cache::set('user_info', $data);
+        $data && Session::set('user_info', $data);
         return $data;
     }
 
@@ -88,8 +88,7 @@ class UserInfo
      */
     public function logout()
     {
-        Session::delete(['user_auth', 'user_auth_sign']);
-        Cache::rm('user_info');
+        Session::delete(['user_auth', 'user_auth_sign', 'user_info']);
         return ;
     }
 
@@ -115,7 +114,7 @@ class UserInfo
             return Session::get('user_auth.username');
         }
         //获取缓存数据
-        $list = Cache::get('sys_user_nickname_list');
+        $list = Session::get('sys_user_nickname_list');
         if (isset($list[$uid])) { // 查找用户信息
             return $list[$uid];
         }
@@ -124,7 +123,7 @@ class UserInfo
             if (empty($info)) {
                 return null;
             }
-            Cache::set('sys_user_nickname_list', [$info['uid']=>$info['nickname']]);
+            Session::set('sys_user_nickname_list', [$info['uid']=>$info['nickname']]);
             if (empty($list)){
                 return $info['nickname'];
             }
@@ -133,7 +132,7 @@ class UserInfo
 
         //缓存用户
         $count = count($list);
-        $max = Config::get('key.user_max_cache') ?: 500;
+        $max = Session::get('key.user_max_cache') ?: 500;
         while ($count--> $max) {
             array_shift($list);
         }
