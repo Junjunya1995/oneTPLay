@@ -73,7 +73,7 @@ class UserBehavior
             'record_id' => $record_id,
             'create_time' => Request::time(),
             'action_id' => $action_info['id'],
-            'action_ip' => Request::ip(1),
+            'action_ip' => Request::ip(),
         ];
 
         //解析日志规则,生成日志备注

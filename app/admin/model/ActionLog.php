@@ -42,19 +42,7 @@ class ActionLog extends Model
     }
 
     /**
-     * IP地址转换
-     * @author staitc7 <static7@qq.com>
-     * @param $value 值
-     * @return mixed
-     */
-    public function getActionIpAttr($value)
-    {
-        return $value ? long2ip((int)$value) : null;
-    }
-
-    /**
-     * IP地址转换
-     * @author staitc7 <static7@qq.com>
+     * 状态转换
      * @param $value 值
      * @return mixed
      */

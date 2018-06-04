@@ -37,7 +37,7 @@ class Member extends Model
         /* 更新登录信息 */
         $object->login++;
         $object->last_login_time=Request::time();
-        $object->last_login_ips = Request::ip(1);
+        $object->last_login_ips = Request::ip();
         $object->save();
         return $object ? $object->toArray() : false;
     }

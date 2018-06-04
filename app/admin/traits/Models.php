@@ -47,7 +47,7 @@ trait Models
      * @param array $query 额外参数
      * @return mixed
      */
-    public function listsPage(array $map = [], string $field = '*', string $order = '', int $page = 1,int $limit = 0, array $query = [])
+    public function listsPage(array $map = [], $field = '*', string $order = '', int $page = 1,int $limit = 0, array $query = [])
     {
         $object = $this::where($map ?: null)
             ->field($field ?: '*')
