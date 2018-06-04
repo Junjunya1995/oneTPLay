@@ -49,7 +49,7 @@ class ActionLog extends Model
      */
     public function getActionIpAttr($value)
     {
-        return $value ? long2ip($value) : null;
+        return $value ? long2ip((int)$value) : null;
     }
 
     /**
