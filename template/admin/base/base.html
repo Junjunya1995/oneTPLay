@@ -17,7 +17,7 @@
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo logo">
-            <img src="__IMG__/logo.png" alt="layui">
+            <a href="{:Url::build('index/index')}"><img src="__IMG__/logo.png" alt="layui"></a>
         </div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         {notempty name="systemMenus.main"}
@@ -86,10 +86,10 @@
 <script type="text/javascript" src="__STATIC__/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="__STATIC__/common/common.js" charset="utf-8"></script>
 <script type="text/javascript">
-    layui.use('element', function () {
+    layui.use(['element', 'jquery'], function () {
         layui.element.on('nav(left_url)', function (elem) {
             layui.layer.load(2);
-            window.location.href = elem.children('a').attr('data-url');
+            window.location.href = elem[0].getAttribute('data-url')
         });
         layui.$('.personal').on('click',function () {
             layui.$.get(this.href, function (str) {
