@@ -56,7 +56,7 @@ CREATE TABLE `tp5_action_log` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `action_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '行为id',
   `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '执行用户id',
-  `action_ip` bigint(20) NOT NULL COMMENT '执行行为者ip',
+  `action_ip` char(16) NOT NULL DEFAULT '' COMMENT '执行行为者ip',
   `model` varchar(50) NOT NULL DEFAULT '' COMMENT '触发行为的表',
   `record_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '触发行为的数据id',
   `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '日志备注',
@@ -409,7 +409,7 @@ INSERT INTO `tp5_deploy` VALUES ('33', 'ALLOW_VISIT', '1', '不受限控制器�
 INSERT INTO `tp5_deploy` VALUES ('34', 'DENY_VISIT', '1', '超管专限控制器方法', '0', '', '仅超级管理员可访问的控制器方法', '1386644141', '1506007699', '1', '1:Admin/getMenus\n2:AuthManager/updateRules', '0', '0');
 INSERT INTO `tp5_deploy` VALUES ('35', 'REPLY_LIST_ROWS', '6', '回复列表每页条数', '2', '', '', '1386645376', '1478971477', '1', '10', '0', '1');
 INSERT INTO `tp5_deploy` VALUES ('36', 'ADMIN_ALLOW_IP', '2', '后台允许访问IP', '4', '', '多个用逗号分隔，如果不配置表示不限制IP访问', '1387165454', '1387165553', '1', '', '12', '2');
-INSERT INTO `tp5_deploy` VALUES ('46', 'DOMAIN', '1', '本站域名', '1', '', '', '1481617913', '1506095439', '1', 'https://www.calm7.com/', '0', '0');
+INSERT INTO `tp5_deploy` VALUES ('46', 'DOMAIN', '1', '本站域名', '1', '', '', '1481617913', '1506095439', '1', '', '0', '0');
 
 -- ----------------------------
 -- Table structure for tp5_document
@@ -542,9 +542,9 @@ CREATE TABLE `tp5_member` (
   `qq` char(10) NOT NULL DEFAULT '' COMMENT 'qq号',
   `score` mediumint(8) NOT NULL DEFAULT '0' COMMENT '用户积分',
   `login` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '登录次数',
-  `reg_ip` bigint(20) NOT NULL DEFAULT '0' COMMENT '注册IP',
+  `reg_ip` char(16) NOT NULL DEFAULT '' COMMENT '注册IP',
   `reg_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
-  `last_login_ip` bigint(20) NOT NULL DEFAULT '0' COMMENT '最后登录IP',
+  `last_login_ip` char(16) NOT NULL DEFAULT '' COMMENT '最后登录IP',
   `last_login_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最后登录时间',
   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '会员状态',
   `portrait` tinyint(10) unsigned DEFAULT '0' COMMENT '用户头像',
@@ -575,7 +575,6 @@ CREATE TABLE `tp5_menu` (
 -- ----------------------------
 -- Records of tp5_menu
 -- ----------------------------
-INSERT INTO `tp5_menu` VALUES ('1', '首页', '0', '1', 'Index/index', '0', '', '', '0', '1');
 INSERT INTO `tp5_menu` VALUES ('16', '用户', '0', '3', 'Member/index', '0', '', '', '0', '1');
 INSERT INTO `tp5_menu` VALUES ('17', '用户信息', '16', '1', 'Member/index', '0', '', '用户管理', '0', '1');
 INSERT INTO `tp5_menu` VALUES ('18', '查看用户', '17', '0', 'Member/edit', '0', '添加新用户', '', '0', '1');
@@ -813,9 +812,9 @@ CREATE TABLE `tp5_ucenter_member` (
   `email` char(32) NOT NULL COMMENT '用户邮箱',
   `mobile` char(15) NOT NULL DEFAULT '' COMMENT '用户手机',
   `reg_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
-  `reg_ip` bigint(20) NOT NULL DEFAULT '0' COMMENT '注册IP',
+  `reg_ip` char(16) NOT NULL DEFAULT '' COMMENT '注册IP',
   `last_login_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最后登录时间',
-  `last_login_ip` bigint(20) NOT NULL DEFAULT '0' COMMENT '最后登录IP',
+  `last_login_ip` char(16) NOT NULL DEFAULT '' COMMENT '最后登录IP',
   `update_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` tinyint(4) DEFAULT '0' COMMENT '用户状态',
   PRIMARY KEY (`id`),
