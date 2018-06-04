@@ -32,11 +32,12 @@
             loading: false,
             cols: [[ //标题栏
                 {checkbox: true},
-                {field: 'id', title: '编号', width: 150},
-                {field: 'action_id', title: '行为名称', width: 300},
-                {field: 'user_id', title: '执行者', width: 150},
-                {field: 'type', title: '执行操作', width: 150},
-                {field: 'create_time', title: '执行时间', width: 200},
+                {field: 'id', title: '编号'},
+                {field: 'action_id', title: '行为名称'},
+                {field: 'user_id', title: '执行者'},
+                {field: 'type', title: '执行操作'},
+                {field: 'action_ip', title: 'ip'},
+                {field: 'create_time', title: '执行时间'},
                 {field: 'status', title: '状态', width: 200, templet: '#statusTpl'},
                 {fixed: 'right', title: '操作', align: 'center', width: 200, toolbar: '#operating'},
             ]]
