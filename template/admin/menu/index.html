@@ -1,12 +1,12 @@
 {extend name="base:base" /}
 {block name="body"}
 <div class="layui-btn-group">
-    <a class="layui-btn layui-btn-small layui-btn-normal" href="{:Url::build('add',['pid'=>$pid ?: 0])}">增加</a>
-    <button class="layui-btn layui-btn-small layui-btn-danger ajax-post confirm"
+    <a class="layui-btn layui-btn-sm layui-btn-normal" href="{:Url::build('add',['pid'=>$pid ?: 0])}">增加</a>
+    <button class="layui-btn layui-btn-sm layui-btn-danger ajax-post confirm"
             url="{:Url::build('batchUpdate',['value'=>-1])}" target-form="ids">删除
     </button>
     {present name='father'}
-    <a class="layui-btn layui-btn-small layui-btn-normal"
+    <a class="layui-btn layui-btn-sm layui-btn-normal"
        href="{:Url::build('menu/index',['pid'=>$father['pid'] ?? 0])}">返回{$father.title ?? ''}</a>
     {/present}
 </div>
@@ -19,28 +19,28 @@
 </script>
 <script type="text/html" id="isDev">
     {{#  if(d.is_dev == 1){ }}
-        <a class="layui-btn layui-btn-mini" lay-event="isDev">是</a>
+        <a class="layui-btn layui-btn-xs" lay-event="isDev">是</a>
     {{#  }else{ }}
-        <a class="layui-btn layui-btn-mini" lay-event="isDev">否</a>
+        <a class="layui-btn layui-btn-xs" lay-event="isDev">否</a>
     {{# } }}
 </script>
 <script type="text/html" id="hide">
     {{#  if(d.hide == 1){ }}
-        <a class="layui-btn layui-btn-mini" lay-event="hide">是</a>
+        <a class="layui-btn layui-btn-xs" lay-event="hide">是</a>
     {{#  }else{ }}
-        <a class="layui-btn layui-btn-mini" lay-event="hide">否</a>
+        <a class="layui-btn layui-btn-xs" lay-event="hide">否</a>
     {{# } }}
 </script>
 <script type="text/html" id="father">
     {{#  return "{$father.title ?? '无'}"; }}
 </script>
 <script type="text/html" id="title">
-<a class="layui-btn layui-btn-mini layui-btn-primary" href="{:Url::build('menu/index')}?pid={{d.id}}">{{ d.title }}</a>
+<a class="layui-btn layui-btn-xs layui-btn-primary" href="{:Url::build('menu/index')}?pid={{d.id}}">{{ d.title }}</a>
 </script>
 <script type="text/html" id="operating">
-    <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="status">更改状态</a>
-    <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="delete">删除</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="status">更改状态</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
 </script>
 <script type="text/javascript">
     UrlHighlight("{:Url::build('Menu/index')}");

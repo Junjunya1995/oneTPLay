@@ -2,10 +2,10 @@
 
 {block name="body"}
 <div class="layui-btn-group">
-    <a class="layui-btn layui-btn-small layui-btn-normal editgroup" href="{:Url::build('AuthManager/editGroup')}">增加</a>
-    <button class="layui-btn layui-btn-small layui-btn-warm ajax-post" url="{:Url::build('batchUpdate',['value'=>1])}" target-form="ids">启用</button>
-    <button class="layui-btn layui-btn-small layui-btn-warm ajax-post " url="{:Url::build('batchUpdate',['value'=>0])}" target-form="ids" >禁用</button>
-    <button class="layui-btn layui-btn-small layui-btn-danger ajax-post " url="{:Url::build('batchUpdate',['value'=>-1])}" target-form="ids">删除</button>
+    <a class="layui-btn layui-btn-sm layui-btn-normal editgroup" href="{:Url::build('AuthManager/editGroup')}">增加</a>
+    <button class="layui-btn layui-btn-sm layui-btn-warm ajax-post" url="{:Url::build('batchUpdate',['value'=>1])}" target-form="ids">启用</button>
+    <button class="layui-btn layui-btn-sm layui-btn-warm ajax-post " url="{:Url::build('batchUpdate',['value'=>0])}" target-form="ids" >禁用</button>
+    <button class="layui-btn layui-btn-sm layui-btn-danger ajax-post " url="{:Url::build('batchUpdate',['value'=>-1])}" target-form="ids">删除</button>
 </div>
 
 <table class="layui-hide" id="auth" lay-filter="auth"></table>
@@ -15,13 +15,13 @@
     {{#  if(d.status == 1){return "正常"; } else {return "禁用";} }}
 </script>
 <script type="text/html" id="competence">
-    <a class="layui-btn layui-btn-mini" lay-event="access">访问授权</a>
-    <a class="layui-btn layui-btn-mini" lay-event="user">成员授权</a>
+    <a class="layui-btn layui-btn-xs" lay-event="access">访问授权</a>
+    <a class="layui-btn layui-btn-xs" lay-event="user">成员授权</a>
 </script>
 <script type="text/html" id="operating">
-    <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="status">更改状态</a>
-    <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="delete">删除</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="status">更改状态</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
 </script>
 <script type="text/javascript">
     UrlHighlight("{:Url::build('AuthManager/index')}");

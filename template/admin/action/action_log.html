@@ -2,8 +2,8 @@
 
 {block name="body"}
 <div class="layui-btn-group">
-    <a class="layui-btn layui-btn-small layui-btn-normal ajax-get confirm" href="{:Url::build('Action/clear')}">清空</a>
-    <button class="layui-btn layui-btn-small layui-btn-danger ajax-post confirm" url="{:Url::build('Action/remove')}">
+    <a class="layui-btn layui-btn-sm layui-btn-normal ajax-get confirm" href="{:Url::build('Action/clear')}">清空</a>
+    <button class="layui-btn layui-btn-sm layui-btn-danger ajax-post confirm" url="{:Url::build('Action/remove')}">
         删除
     </button>
 </div>
@@ -15,9 +15,9 @@
     {{#  if(d.status == 1){return "正常"; } else {return "禁用";} }}
 </script>
 <script type="text/html" id="operating">
-    <!--<a class="layui-btn layui-btn-mini" lay-event="status">更改状态</a>-->
-    <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="detail">详细</a>
-    <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="delete">删除</a>
+    <!--<a class="layui-btn layui-btn-xs" lay-event="status">更改状态</a>-->
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详细</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
 </script>
 <script type="text/javascript">
     UrlHighlight("{:Url::build('Action/actionLog')}");

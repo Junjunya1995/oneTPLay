@@ -225,7 +225,7 @@
                 obj.preview(function (index,file,result) {
                     layui.$('#category_pic').attr('src', result).removeClass('layui-hide');
                     before = layui.$('#before');
-                    before.html('<a class="layui-btn layui-btn-mini upload_pic">上传</a>');
+                    before.html('<a class="layui-btn layui-btn-xs upload_pic">上传</a>');
                     before.find('.upload_pic').on('click', function(){
                         upload_pic.upload();
                     });
